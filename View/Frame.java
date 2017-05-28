@@ -35,13 +35,15 @@ public class Frame extends javax.swing.JFrame {
         //setExtendedState(JFrame.MAXIMIZED_BOTH); 
         controller = new Controller();
         initComponents();
-        fillInitialInformation();
+        changeLessonInformation(0,0);
     }
-    private void fillInitialInformation(){
-        InfoObject info = controller.getInitialInfo();
+
+    
+    private void changeLessonInformation(int cIndex, int lIndex){
+        InfoObject info = controller.getLessonInfo(cIndex, lIndex);
         CLname = info.clName;
-        cIndex = info.cIndex;
-        lIndex = info.lIndex;
+        this.cIndex = info.cIndex;
+        this.lIndex = info.lIndex;
         content = info.content;
         solution = info.solution;
         message = info.message;
@@ -49,8 +51,9 @@ public class Frame extends javax.swing.JFrame {
         contentLabel.setText(content);
         headerLabel.setText(CLname);
         messageLabel.setText(message);
+        controller.updateButtons(cIndex,lIndex);
+        answerPane.setText("");
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -77,18 +80,20 @@ public class Frame extends javax.swing.JFrame {
         messageLabel = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         headerLabel = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        next = new javax.swing.JButton();
+        back = new javax.swing.JButton();
         contentLabel = new javax.swing.JLabel();
         canvas = new classes.Canvas();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        l11 = new javax.swing.JMenuItem();
+        l12 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenu10 = new javax.swing.JMenu();
+        l21 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        l31 = new javax.swing.JMenuItem();
+        l32 = new javax.swing.JMenuItem();
+        l33 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenu9 = new javax.swing.JMenu();
 
@@ -130,14 +135,19 @@ public class Frame extends javax.swing.JFrame {
         headerLabel.setText("jLabel1");
         headerLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton2.setText("Siguiente");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        next.setText("Siguiente");
+        next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                nextActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Anterior");
+        back.setText("Anterior");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
 
         contentLabel.setText("Content ");
         contentLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -149,9 +159,9 @@ public class Frame extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jButton3)
+                .addComponent(back)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(next)
                 .addGap(30, 30, 30))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
@@ -171,8 +181,8 @@ public class Frame extends javax.swing.JFrame {
                 .addComponent(contentLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(next)
+                    .addComponent(back))
                 .addGap(24, 24, 24))
         );
 
@@ -194,40 +204,61 @@ public class Frame extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem3.setText("Lección 1.1");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        l11.setText("Lección 1.1");
+        l11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                l11ActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem3);
+        jMenu4.add(l11);
 
-        jMenuItem4.setText("Lección 1.2");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        l12.setText("Lección 1.2");
+        l12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                l12ActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem4);
+        jMenu4.add(l12);
 
         jMenuBar2.add(jMenu4);
 
         jMenu5.setText("   Capítulo 2   ");
 
-        jMenu10.setText("Lección 2.1");
-        jMenu5.add(jMenu10);
+        l21.setText("Lección 2.1");
+        l21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l21ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(l21);
 
         jMenuBar2.add(jMenu5);
 
         jMenu6.setText("   Capítulo 3   ");
 
-        jMenuItem6.setText("jMenuItem6");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        l31.setText("Lección 3.1");
+        l31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                l31ActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem6);
+        jMenu6.add(l31);
+
+        l32.setText("Lección 3.2");
+        l32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l32ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(l32);
+
+        l33.setText("Lección 3.3");
+        l33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l33ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(l33);
 
         jMenuBar2.add(jMenu6);
 
@@ -279,49 +310,66 @@ public class Frame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void l11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+        changeLessonInformation(0,0);
+    }//GEN-LAST:event_l11ActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void l31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l31ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+        changeLessonInformation(2,0);
+    }//GEN-LAST:event_l31ActionPerformed
 
     private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu4ActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void l12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l12ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        changeLessonInformation(0,1);
+
+    }//GEN-LAST:event_l12ActionPerformed
+
+    private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        int[] nextLesson = controller.getNextLesson(cIndex, lIndex);
+        cIndex = nextLesson[0];
+        lIndex = nextLesson[1];
+        changeLessonInformation(cIndex, lIndex);
+    }//GEN-LAST:event_nextActionPerformed
 
     private void runButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runButtonActionPerformed
         String answer = answerPane.getText();
-        try {
-            PrintWriter writer = new PrintWriter("input.txt", "UTF-8");
-            writer.print(answer);
-            writer.close();
-            
-            System.setIn(new FileInputStream(new File("input.txt")));
-            ANTLRInputStream input = new ANTLRInputStream(System.in);
-            logoLexer lexer = new logoLexer(input);
-            CommonTokenStream tokens = new CommonTokenStream(lexer);
-            logoParser parser = new logoParser(tokens);
-            ParseTree tree = parser.prog();
-
-        MyVisitor<Object> loader = new MyVisitor<Object>();
-        loader.visit(tree);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        
-
+        controller.runInterpreter(answer);
+        message = controller.checkSolution(cIndex, lIndex, answer);
+        messageLabel.setText(message);
         
     }//GEN-LAST:event_runButtonActionPerformed
+
+    private void l21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l21ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(1,0);
+    }//GEN-LAST:event_l21ActionPerformed
+
+    private void l32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l32ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(2,1);
+    }//GEN-LAST:event_l32ActionPerformed
+
+    private void l33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l33ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(2,2);
+    }//GEN-LAST:event_l33ActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+
+        int[] previousLesson = controller.getPrevoiusLesson(cIndex, lIndex);
+        cIndex = previousLesson[0];
+        lIndex = previousLesson[1];
+        changeLessonInformation(cIndex, lIndex);
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -364,13 +412,11 @@ public class Frame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JEditorPane answerPane;
+    public static javax.swing.JButton back;
     public classes.Canvas canvas;
     private javax.swing.JLabel contentLabel;
     private javax.swing.JLabel headerLabel;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -383,15 +429,19 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    public static javax.swing.JMenuItem l11;
+    public static javax.swing.JMenuItem l12;
+    public static javax.swing.JMenuItem l21;
+    public static javax.swing.JMenuItem l31;
+    public static javax.swing.JMenuItem l32;
+    public static javax.swing.JMenuItem l33;
     private javax.swing.JTextArea messageLabel;
+    public static javax.swing.JButton next;
     private javax.swing.JButton runButton;
     // End of variables declaration//GEN-END:variables
 }
