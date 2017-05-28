@@ -8,7 +8,12 @@ package View;
 import javax.swing.JFrame;
 import Controller.Controller;
 import Controller.InfoObject;
-
+import classes.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.PrintWriter;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.*;
 /**
  *
  * @author Santiago
@@ -66,8 +71,8 @@ public class Frame extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jEditorPane1 = new javax.swing.JEditorPane();
-        jButton1 = new javax.swing.JButton();
+        answerPane = new javax.swing.JEditorPane();
+        runButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         messageLabel = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
@@ -103,9 +108,15 @@ public class Frame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jScrollPane1.setViewportView(jEditorPane1);
+        answerPane.setToolTipText("Escribe el código aqui");
+        jScrollPane1.setViewportView(answerPane);
 
-        jButton1.setText("jButton1");
+        runButton.setText("Ejecutar!");
+        runButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                runButtonActionPerformed(evt);
+            }
+        });
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -238,11 +249,11 @@ public class Frame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
+                        .addComponent(runButton))
                     .addComponent(canvas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 662, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -257,7 +268,7 @@ public class Frame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(39, 39, 39)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(runButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -287,6 +298,30 @@ public class Frame extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void runButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runButtonActionPerformed
+        String answer = answerPane.getText();
+        try {
+            PrintWriter writer = new PrintWriter("input.txt", "UTF-8");
+            writer.print(answer);
+            writer.close();
+            
+            System.setIn(new FileInputStream(new File("input.txt")));
+            ANTLRInputStream input = new ANTLRInputStream(System.in);
+            logoLexer lexer = new logoLexer(input);
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            logoParser parser = new logoParser(tokens);
+            ParseTree tree = parser.prog();
+
+        MyVisitor<Object> loader = new MyVisitor<Object>();
+        loader.visit(tree);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+
+        
+    }//GEN-LAST:event_runButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -328,13 +363,12 @@ public class Frame extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JEditorPane answerPane;
     public classes.Canvas canvas;
     private javax.swing.JLabel contentLabel;
     private javax.swing.JLabel headerLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
@@ -358,5 +392,6 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea messageLabel;
+    private javax.swing.JButton runButton;
     // End of variables declaration//GEN-END:variables
 }
