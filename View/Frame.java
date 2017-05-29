@@ -152,7 +152,7 @@ public class Frame extends javax.swing.JFrame {
         contentLabel.setText("Content ");
         contentLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         contentLabel.setAutoscrolls(true);
-        contentLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        contentLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         contentLabel.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
