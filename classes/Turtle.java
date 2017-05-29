@@ -14,6 +14,8 @@ import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
@@ -33,7 +35,7 @@ public class Turtle {
     	
     	//img = ImageIO.read(getClass().getResource("Imagen2.png"));
         img = ImageIO.read(new FileInputStream("Imagenes/Imagen2.png"));
-    	xcola=-7+x+img.getWidth()/2;
+    	xcola=+x+img.getWidth()/2;
     	ycola=y+img.getHeight()/2;
     	
     	}
@@ -71,15 +73,20 @@ public class Turtle {
 	}
 	
 	public void turn(int angle) throws IOException{
-		this.angle=this.angle+angle;
+		            
+                this.angle=this.angle+angle;
 		this.angle=this.angle%360;
-		try {
-			Thread.sleep(300);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		App.getInstance().mframe.canvas.repaint();
+            //System.out.println(angle);
+        try {
+            Thread.currentThread().sleep(400);
+            
+            //App.getInstance().wait(400);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Turtle.class.getName()).log(Level.SEVERE, null, ex);
+        }
+		
 	}
 	
 	public void hide () throws IOException{

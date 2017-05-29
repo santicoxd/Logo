@@ -158,7 +158,7 @@ public class Controller {
             //System.out.println("Found: " + m.group(0));
         }*/
         String result = s.replaceAll("(\\s|\\n)", "");
-        System.out.println(result);
+        //System.out.println(result);
         return result;
     }
     

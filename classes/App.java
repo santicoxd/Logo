@@ -43,21 +43,24 @@ public class App {
 		
 		App app = getInstance();
 		app.run();
-		try {
+                //app.mframe.canvas.pintar();
+		/*try {
 			Thread.sleep(1000);
 			//app.drawing.turtle.turn(45);
 			
 		//fd 60 rt 120 fd 60 rt 120 fd 60 rt 120 
 			
-			app.drawing.turtle.turn(180-120);
-			app.drawing.turtle.move(40);
-			app.drawing.turtle.turn(120);
-			app.drawing.turtle.hide();
-			app.drawing.turtle.move(40);
-			app.drawing.turtle.turn(120);
 			
-			app.drawing.turtle.move(40);
-			app.drawing.turtle.turn(120);
+                //app.moveTurtle(10);
+                app.rotateTurtle(45);
+                //app.moveTurtle(10);
+                app.rotateTurtle(45);
+                //app.moveTurtle(10);
+                app.rotateTurtle(45);
+                //app.moveTurtle(10);
+                app.rotateTurtle(45);
+			
+			
 			
 			
 			
@@ -65,15 +68,14 @@ public class App {
 			
 		
 			
-		Thread.sleep(1000);
-		app.drawing.clearscreen();
-		app.drawing.turtle.show();	
+			
 		
 		
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
+                app.bailar();
 		
 	}
 	
@@ -81,7 +83,15 @@ public class App {
 		drawing.paint(g);
 	}
 	
-
+ public void moveTurtle(int pasos) throws IOException
+        {
+            instance.drawing.turtle.move(pasos);
+        }
+        
+public void rotateTurtle(int angle) throws IOException, InterruptedException
+        {
+            instance.drawing.turtle.turn(angle);
+        }
 	
 	private static App instance;
 	public Frame mframe;
@@ -90,6 +100,12 @@ public class App {
 		this.drawing.addLine(rectLine);
 		
 	}
+
+    private void bailar() {
+    this.drawing.bailar();
+    
+    }
+       
 	
 	
 	
