@@ -76,8 +76,8 @@ public class Turtle {
 		            
                 this.angle=this.angle+angle;
 		this.angle=this.angle%360;
-		
-		App.getInstance().mframe.canvas.repaint();
+		//App.getInstance().mframe.canvas.repaint();
+		App.getInstance().mframe.canvas.paintImmediately(0,0,662,438);
             //System.out.println(angle);
         try {
             Thread.currentThread().sleep(400);
@@ -131,8 +131,8 @@ public class Turtle {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		App.getInstance().mframe.canvas.repaint();
-		
+		App.getInstance().mframe.canvas.paintImmediately(0,0,662,438);
+		//App.getInstance().mframe.canvas.repaint();
 	}
 
 }

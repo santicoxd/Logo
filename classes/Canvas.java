@@ -15,7 +15,7 @@ public class Canvas extends JPanel {
 			this.setBackground(Color.blue);
 			
 		}
-		public void paintComponent (Graphics g){
+		/*public void paintComponent (Graphics g){
                     super.paintComponent(g);
                     try {
 				App.getInstance().paint((Graphics2D) g);
@@ -23,7 +23,7 @@ public class Canvas extends JPanel {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-                }
+                }*/
                 /*public void paintComponent( Graphics g )
 		{	
                         System.out.println("repaint");
@@ -43,9 +43,9 @@ public class Canvas extends JPanel {
 			
 		}*/
                 
-                /*public void paint( Graphics g )
+                public void paint( Graphics g )
 		{	
-                        System.out.println("paint");
+                        //System.out.println("paint");
                         super.paint( g );
 			try {
                             App.getInstance().paint((Graphics2D)g);
@@ -58,8 +58,8 @@ public class Canvas extends JPanel {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 			
-		}*/
+		}
 
 }

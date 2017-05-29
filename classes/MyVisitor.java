@@ -52,14 +52,14 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
             App.getInstance().moveTurtle(-pasos);
         }else if (ctx.rt()!= null){
          
-            int angle = 45;
+            int angle = 90;
             //Thread.currentThread().sleep(400);
             App.getInstance().rotateTurtle(angle);
             
             //this.pause();
             
         }else if (ctx.lt()!= null){
-            int angle = 45;
+            int angle = 90;
             App.getInstance().rotateTurtle(-angle);
         }
         else if (ctx.cs()!= null){

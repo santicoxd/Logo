@@ -44,21 +44,21 @@ public class App {
 		App app = getInstance();
 		app.run();
                 //app.mframe.canvas.pintar();
-		/*try {
+		try {
 			Thread.sleep(1000);
 			//app.drawing.turtle.turn(45);
 			
 		//fd 60 rt 120 fd 60 rt 120 fd 60 rt 120 
 			
 			
-                //app.moveTurtle(10);
-                app.rotateTurtle(45);
-                //app.moveTurtle(10);
-                app.rotateTurtle(45);
-                //app.moveTurtle(10);
-                app.rotateTurtle(45);
-                //app.moveTurtle(10);
-                app.rotateTurtle(45);
+                app.moveTurtle(10);
+                app.rotateTurtle(90);
+                app.moveTurtle(10);
+                app.rotateTurtle(90);
+                app.moveTurtle(10);
+                app.rotateTurtle(90);
+                app.moveTurtle(10);
+                app.rotateTurtle(90);
 			
 			
 			
@@ -74,8 +74,8 @@ public class App {
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
-                app.bailar();
+		}
+               // app.bailar();
 		
 	}
 	
