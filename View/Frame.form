@@ -300,7 +300,7 @@
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="contentLabel" pref="300" max="32767" attributes="0"/>
+                  <Component id="contentLabel" pref="355" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -311,8 +311,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="headerLabel" min="-2" pref="41" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="contentLabel" min="-2" pref="501" max="-2" attributes="0"/>
-                  <EmptySpace pref="27" max="32767" attributes="0"/>
+                  <Component id="contentLabel" min="-2" pref="532" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="next" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="back" alignment="3" min="-2" max="-2" attributes="0"/>
