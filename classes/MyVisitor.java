@@ -64,7 +64,31 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
         }
         else if (ctx.cs()!= null){
  
-            App.getInstance().getInstance().drawing.clearscreen();
+            App.getInstance().drawing.clearscreen();
+        }
+        else if (ctx.pu()!= null){
+ 
+            App.getInstance().drawing.turtle.upPencil();
+        }
+        else if (ctx.pd()!= null){
+ 
+            App.getInstance().drawing.turtle.downPencil();
+        }
+        else if (ctx.pd()!= null){
+ 
+            App.getInstance().drawing.turtle.downPencil();
+        }
+        else if (ctx.ht()!= null){
+ 
+            App.getInstance().drawing.turtle.hide();
+        }
+        else if (ctx.st()!= null){
+ 
+            App.getInstance().drawing.turtle.show();
+        }
+        if (ctx.home()!= null){
+ 
+            App.getInstance().drawing.turtle.home();
         }
         
         } catch (IOException ex) {

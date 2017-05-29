@@ -51,14 +51,15 @@ public class App {
 		//fd 60 rt 120 fd 60 rt 120 fd 60 rt 120 
 			
 			
-                app.moveTurtle(10);
-                app.rotateTurtle(90);
-                app.moveTurtle(10);
-                app.rotateTurtle(90);
-                app.moveTurtle(10);
-                app.rotateTurtle(90);
-                app.moveTurtle(10);
-                app.rotateTurtle(90);
+                //app.moveTurtle(10);
+                //app.rotateTurtle(90);
+                //app.moveTurtle(10);
+                //app.drawing.turtle.setxy(0, 0);
+//                app.rotateTurtle(90);
+//                app.moveTurtle(10);
+//                app.rotateTurtle(90);
+//                app.moveTurtle(10);
+//                app.rotateTurtle(90);
 			
 			
 			

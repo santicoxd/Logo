@@ -28,7 +28,6 @@ public class Turtle {
     	up=false;
     	visible=true;
     	x=350;
-    	
     	y=200;
     	
     	
@@ -134,5 +133,31 @@ public class Turtle {
 		App.getInstance().mframe.canvas.paintImmediately(0,0,662,438);
 		//App.getInstance().mframe.canvas.repaint();
 	}
+        public void home() throws IOException {
+		x=350;
+    	    	y=200;
+                Point a = new Point(xcola,ycola);
+                xcola=+x+img.getWidth()/2;
+                ycola=y+img.getHeight()/2;
+                Point b = new Point(xcola,ycola);
+                App.getInstance().addLine(new RectLine(a, b));         
+                this.angle=0;
+		App.getInstance().mframe.canvas.paintImmediately(0,0,662,438);
+	}
+        
+        public void label(String msg){
+            //Corregir gramatica
+        }
 
+        public void setxy (int x , int y) throws IOException{
+            this.x = x*5;
+            this.y = y*5;
+            Point a = new Point(xcola,ycola);
+            xcola=+x+img.getWidth()/2;
+            ycola=y+img.getHeight()/2;
+            Point b = new Point(xcola,ycola);
+            App.getInstance().addLine(new RectLine(a, b));
+	    App.getInstance().mframe.canvas.paintImmediately(0,0,662,438);
+            
+        }
 }
