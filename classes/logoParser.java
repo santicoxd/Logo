@@ -1450,6 +1450,7 @@ public class logoParser extends Parser {
 	}
 
 	public static class SignExpressionContext extends ParserRuleContext {
+		public Token op;
 		public NumberContext number() {
 			return getRuleContext(NumberContext.class,0);
 		}
@@ -1492,9 +1493,10 @@ public class logoParser extends Parser {
 				{
 				{
 				setState(210);
+				((SignExpressionContext)_localctx).op = _input.LT(1);
 				_la = _input.LA(1);
 				if ( !(_la==T__13 || _la==T__14) ) {
-				_errHandler.recoverInline(this);
+					((SignExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 				}
 				else {
 					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1545,6 +1547,7 @@ public class logoParser extends Parser {
 	}
 
 	public static class MultiplyingExpressionContext extends ParserRuleContext {
+		public Token op;
 		public List<SignExpressionContext> signExpression() {
 			return getRuleContexts(SignExpressionContext.class);
 		}
@@ -1588,9 +1591,10 @@ public class logoParser extends Parser {
 					{
 					{
 					setState(222);
+					((MultiplyingExpressionContext)_localctx).op = _input.LT(1);
 					_la = _input.LA(1);
 					if ( !(_la==T__15 || _la==T__16) ) {
-					_errHandler.recoverInline(this);
+						((MultiplyingExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 					}
 					else {
 						if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1620,6 +1624,7 @@ public class logoParser extends Parser {
 	}
 
 	public static class ExpressionContext extends ParserRuleContext {
+		public Token op;
 		public List<MultiplyingExpressionContext> multiplyingExpression() {
 			return getRuleContexts(MultiplyingExpressionContext.class);
 		}
@@ -1663,9 +1668,10 @@ public class logoParser extends Parser {
 					{
 					{
 					setState(230);
+					((ExpressionContext)_localctx).op = _input.LT(1);
 					_la = _input.LA(1);
 					if ( !(_la==T__13 || _la==T__14) ) {
-					_errHandler.recoverInline(this);
+						((ExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 					}
 					else {
 						if ( _input.LA(1)==Token.EOF ) matchedEOF = true;

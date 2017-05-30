@@ -34,32 +34,97 @@ import java.util.logging.Logger;
    ;
  */
 public class MyVisitor<T> extends logoBaseVisitor<T>  {
-
+    @Override 
+    public T visitNumber(logoParser.NumberContext ctx) {
+        //System.out.println("Encontre un numero");
+        Integer a = Integer.valueOf(ctx.NUMBER().getText());
+        
+        return (T)a;
+    }
     
-   
+    @Override public T visitSignExpression(logoParser.SignExpressionContext ctx) {
+        
+        Integer number = (Integer) visit(ctx.number());
+ 
+        
+        if (ctx.op!=null){
+           if(ctx.op.getText().equals("+")){
+               number = number;
+           }else
+           {    number = number * (-1);
+                    
+         
+           }
+              
+        }
+        
+        return (T)number;
+    }
+
+    @Override
+    public T visitMultiplyingExpression(logoParser.MultiplyingExpressionContext ctx) {
+        
+        Integer rigth = (Integer) visit(ctx.signExpression(0));
+        
+        Integer resultado = rigth;
+        if (ctx.op!=null){
+            Integer left = (Integer) visit(ctx.signExpression(1));
+            if(ctx.op.getText().equals("*")){
+                resultado= left*rigth;
+           }else{
+                
+               resultado=(int)rigth/left;
+               
+                
+           }
+            
+        }
+        return (T)resultado;
+    }
+ 
+    public T visitExpression(logoParser.ExpressionContext ctx) {
+      
+        Integer rigth = (Integer) visit(ctx.multiplyingExpression(0));
+        
+        Integer resultado = rigth;
+        if (ctx.op!=null){
+            Integer left = (Integer) visit(ctx.multiplyingExpression(1));
+            if(ctx.op.getText().equals("+")){
+                resultado= left+rigth;
+           }else{
+               resultado=rigth-left;
+               
+           }
+            
+        }
+      
+        return (T)resultado;
+    }
+    
     @Override
     public T visitCmd(logoParser.CmdContext ctx) {
        
         try {
         if (ctx.fd()!= null){
            
-            int pasos = 10;
+            Integer pasos = (Integer) visit(ctx.fd().expression());
             App.getInstance().moveTurtle(pasos);
             
             
         }else if (ctx.bk()!= null){
-            int pasos = 10;
+            Integer pasos = (Integer) visit(ctx.bk().expression());
             App.getInstance().moveTurtle(-pasos);
         }else if (ctx.rt()!= null){
          
-            int angle = 90;
+            //int angle = 90;
+            Integer angle = (Integer) visit(ctx.rt().expression());
             //Thread.currentThread().sleep(400);
             App.getInstance().rotateTurtle(angle);
             
             //this.pause();
             
         }else if (ctx.lt()!= null){
-            int angle = 90;
+            Integer angle = (Integer) visit(ctx.rt().expression());
             App.getInstance().rotateTurtle(-angle);
         }
         else if (ctx.cs()!= null){

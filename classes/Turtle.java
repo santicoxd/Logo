@@ -72,19 +72,18 @@ public class Turtle {
 	}
 	
 	public void turn(int angle) throws IOException{
-		            
+		 try {
+			Thread.sleep(200);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}           
                 this.angle=this.angle+angle;
 		this.angle=this.angle%360;
 		//App.getInstance().mframe.canvas.repaint();
 		App.getInstance().mframe.canvas.paintImmediately(0,0,662,438);
             //System.out.println(angle);
-        try {
-            Thread.currentThread().sleep(400);
-            
-            //App.getInstance().wait(400);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Turtle.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
 		
 	}
 	
@@ -125,7 +124,7 @@ public class Turtle {
 		x = x+dx;
 		y = y-dy;
 		try {
-			Thread.sleep(100);
+			Thread.sleep(400);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
