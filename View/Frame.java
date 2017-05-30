@@ -88,6 +88,11 @@ public class Frame extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         l11 = new javax.swing.JMenuItem();
         l12 = new javax.swing.JMenuItem();
+        l13 = new javax.swing.JMenuItem();
+        l14 = new javax.swing.JMenuItem();
+        l15 = new javax.swing.JMenuItem();
+        l16 = new javax.swing.JMenuItem();
+        l17 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         l21 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
@@ -221,6 +226,46 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         jMenu4.add(l12);
+
+        l13.setText("Lección 1.3");
+        l13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l13ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(l13);
+
+        l14.setText("Lección 1.4");
+        l14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l14ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(l14);
+
+        l15.setText("Lección 1.5");
+        l15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l15ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(l15);
+
+        l16.setText("Lección 1.6");
+        l16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l16ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(l16);
+
+        l17.setText("Lección 1.7");
+        l17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l17ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(l17);
 
         jMenuBar2.add(jMenu4);
 
@@ -373,6 +418,31 @@ public class Frame extends javax.swing.JFrame {
         changeLessonInformation(cIndex, lIndex);
     }//GEN-LAST:event_backActionPerformed
 
+    private void l15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l15ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(0,4);
+    }//GEN-LAST:event_l15ActionPerformed
+
+    private void l13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l13ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(0,2);
+    }//GEN-LAST:event_l13ActionPerformed
+
+    private void l14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l14ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(0,3);
+    }//GEN-LAST:event_l14ActionPerformed
+
+    private void l16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l16ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(0,5);
+    }//GEN-LAST:event_l16ActionPerformed
+
+    private void l17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l17ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(0,6);
+    }//GEN-LAST:event_l17ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -438,6 +508,11 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     public static javax.swing.JMenuItem l11;
     public static javax.swing.JMenuItem l12;
+    public static javax.swing.JMenuItem l13;
+    public static javax.swing.JMenuItem l14;
+    public static javax.swing.JMenuItem l15;
+    public static javax.swing.JMenuItem l16;
+    public static javax.swing.JMenuItem l17;
     public static javax.swing.JMenuItem l21;
     public static javax.swing.JMenuItem l31;
     public static javax.swing.JMenuItem l32;

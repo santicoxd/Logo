@@ -47,6 +47,11 @@ public class Controller {
         
         Frame.l11.setEnabled(getLesson(0, 0).isActive());
         Frame.l12.setEnabled(getLesson(0, 1).isActive());
+        Frame.l13.setEnabled(getLesson(0, 2).isActive());
+        Frame.l14.setEnabled(getLesson(0, 3).isActive());
+        Frame.l15.setEnabled(getLesson(0, 4).isActive());
+        Frame.l16.setEnabled(getLesson(0, 5).isActive());
+        Frame.l17.setEnabled(getLesson(0, 6).isActive());
         Frame.l21.setEnabled(getLesson(1, 0).isActive());
         Frame.l31.setEnabled(getLesson(2, 0).isActive());
         Frame.l32.setEnabled(getLesson(2, 1).isActive());
@@ -118,6 +123,7 @@ public class Controller {
     }
     
     public void runInterpreter(String answer){
+        //answer = answer + "\n";
         try {
             PrintWriter writer = new PrintWriter("input.txt", "UTF-8");
             writer.print(answer);
@@ -171,6 +177,6 @@ public class Controller {
    }
    
    public String buildLessonHeader(int cIndex, int lIndex){
-       return "<html><h3>Capítulo " + (cIndex+1) + " - Leccion " + (lIndex+1) + " - " + getLesson(cIndex, lIndex).getName() + "</h3>";
+       return "<html><h3>C" + (cIndex+1) + " - L" + (lIndex+1) + " - " + getLesson(cIndex, lIndex).getName() + "</h3>";
    }
 }
