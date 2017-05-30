@@ -10,8 +10,10 @@ import View.Frame;
 import classes.MyVisitor;
 import classes.logoLexer;
 import classes.logoParser;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -155,10 +157,41 @@ public class Controller {
         if(answer.equals(solution)){
             int nextLesson[] = getNextLesson(cIndex, lIndex);
             getLesson(nextLesson[0], nextLesson[1]).setActive(true);
+            updateProgress(nextLesson[0], nextLesson[1]);
+            
             updateButtons(cIndex, lIndex);
             return "Genial, lo hiciste perfecto!. Cada vez aprenderas más y más \n Ya puedes pasar a la siguiente Lección pulsando el boton SIGUIENTE";
         }else{
            return "INCORRECTO!\nVuelve a leer las instrucciones y revisa tu código, algo estas haciendo mal";  
+        }
+    }
+    
+    public void updateProgress(int cIndex, int lIndex){
+        try{
+            BufferedReader br = new BufferedReader(new FileReader("avance.txt"));
+            String progress = br.readLine();
+            char a[] = progress.toCharArray();
+            int pointer = 0;
+            for(int i = 0; i < course.getChapters().size(); i++){
+                Chapter cActual = course.getChapters().get(i);
+                for(int j = 0; j < cActual.getLessons().size(); j++){
+                    
+                    if(i == cIndex && j == lIndex){
+                        a[pointer] = '1';
+                    }
+                    
+                    pointer++;
+                }
+            }
+            PrintWriter writer = new PrintWriter("avance.txt", "UTF-8");
+            String newProgress = String.valueOf(a);
+            writer.print(newProgress);
+            writer.close();
+            
+ 
+        }catch(Exception e){
+            System.out.println(e);
+            System.out.println("Error in content file , please check that the information is structured like in the file plantilla.txt");
         }
     }
     

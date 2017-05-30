@@ -21,6 +21,7 @@ public class Course {
     public Course(){
         chapters = new ArrayList();
         loadContents();
+        loadProgress();
     }
     
     //Load the content from the .txt file. The content must be well formated
@@ -49,6 +50,32 @@ public class Course {
         }
         
         
+    }
+    
+    private void loadProgress(){
+        
+        try{
+            BufferedReader br = new BufferedReader(new FileReader("avance.txt"));
+            String progress = br.readLine();
+            char a[] = progress.toCharArray();
+            int pointer = 0;
+            for(int i = 0; i < this.chapters.size(); i++){
+                Chapter cActual = this.chapters.get(i);
+                for(int j = 0; j < cActual.lessons.size(); j++){
+                    boolean activeProgress = true;
+                    if(a[pointer] == '0'){
+                        activeProgress = false;
+                    }
+                    cActual.lessons.get(j).setActive(activeProgress);
+                    pointer++;
+                }
+            }
+            
+ 
+        }catch(Exception e){
+            System.out.println(e);
+            System.out.println("Error in content file , please check that the information is structured like in the file plantilla.txt");
+        }
     }
     
     public String getName() {
