@@ -140,9 +140,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Lecci&#xf3;n 1.7"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="l17ActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
@@ -298,6 +295,7 @@
         <Component class="javax.swing.JEditorPane" name="answerPane">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Escribe el c&#xf3;digo aqui"/>
+            <Property name="name" type="java.lang.String" value="Escribe tus comandos aqu&#xed;" noResource="true"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -323,6 +321,7 @@
       <SubComponents>
         <Component class="javax.swing.JTextArea" name="messageLabel">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
           </Properties>

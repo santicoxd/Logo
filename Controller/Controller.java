@@ -123,7 +123,7 @@ public class Controller {
     }
     
     public void runInterpreter(String answer){
-        //answer = answer + "\n";
+        answer = answer + "\n";
         try {
             PrintWriter writer = new PrintWriter("input.txt", "UTF-8");
             writer.print(answer);

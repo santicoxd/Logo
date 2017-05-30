@@ -119,6 +119,7 @@ public class Frame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         answerPane.setToolTipText("Escribe el código aqui");
+        answerPane.setName("Escribe tus comandos aquí"); // NOI18N
         jScrollPane1.setViewportView(answerPane);
 
         runButton.setText("Ejecutar!");
@@ -131,6 +132,7 @@ public class Frame extends javax.swing.JFrame {
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
+        messageLabel.setEditable(false);
         messageLabel.setColumns(20);
         messageLabel.setRows(5);
         jScrollPane2.setViewportView(messageLabel);
@@ -260,11 +262,6 @@ public class Frame extends javax.swing.JFrame {
         jMenu4.add(l16);
 
         l17.setText("Lección 1.7");
-        l17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                l17ActionPerformed(evt);
-            }
-        });
         jMenu4.add(l17);
 
         jMenuBar2.add(jMenu4);
@@ -437,11 +434,6 @@ public class Frame extends javax.swing.JFrame {
         // TODO add your handling code here:
         changeLessonInformation(0,5);
     }//GEN-LAST:event_l16ActionPerformed
-
-    private void l17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l17ActionPerformed
-        // TODO add your handling code here:
-        changeLessonInformation(0,6);
-    }//GEN-LAST:event_l17ActionPerformed
 
     /**
      * @param args the command line arguments
