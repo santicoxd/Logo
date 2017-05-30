@@ -6,6 +6,7 @@
 package classes;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -34,6 +35,8 @@ import java.util.logging.Logger;
    ;
  */
 public class MyVisitor<T> extends logoBaseVisitor<T>  {
+    HashMap<String, Integer> table = new HashMap<>();
+    
     @Override 
     public T visitNumber(logoParser.NumberContext ctx) {
       
@@ -41,11 +44,30 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
         
         return (T)a;
     }
-    
-    @Override public T visitSignExpression(logoParser.SignExpressionContext ctx) {
+    @Override public T visitDeref(logoParser.DerefContext ctx) {
+        //System.out.println("var O.o");
+        String name=ctx.name().getText();
+        System.out.println(name);
+        Integer x=0;
+        if (table.get(name)==null){
+            try {
+                App.getInstance().mframe.error("Error la variable: "+name+" no existe\n");
+            } catch (IOException ex) {
+                Logger.getLogger(MyVisitor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                
+            }else{
+                x=table.get(name);
+            }
         
-        Integer number = (Integer) visit(ctx.number());
- 
+        return (T)x;
+    }
+    @Override public T visitSignExpression(logoParser.SignExpressionContext ctx) {
+        Integer number=0;
+        if(ctx.number()!=null)
+            number = (Integer) visit(ctx.number());
+        if(ctx.deref()!=null)
+            number = (Integer) visit(ctx.deref());
         
         if (ctx.op!=null){
            if(ctx.op.getText().equals("+")){
@@ -81,7 +103,8 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
         }
         return (T)resultado;
     }
- 
+   
+    
     public T visitExpression(logoParser.ExpressionContext ctx) {
       
         Integer rigth = (Integer) visit(ctx.multiplyingExpression(0));
@@ -100,7 +123,7 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
       
         return (T)resultado;
     }
-    
+
     @Override
     public T visitCmd(logoParser.CmdContext ctx) {
        
@@ -152,14 +175,26 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
             App.getInstance().drawing.turtle.show();
         }
         if (ctx.home()!= null){
- 
-            App.getInstance().drawing.turtle.home();
+             App.getInstance().drawing.turtle.home();
         }else if (ctx.repeat()!= null){
             Integer number = (Integer) visit(ctx.repeat().number());
             for (int i = 0 ; i<number;i++){
                 visit(ctx.repeat().block());
             }
             //System.out.println("Veces: "+number);
+            
+        }
+        
+        if (ctx.make()!= null){
+            String name = ctx.make().STRINGLITERAL().getText();
+            name= name.substring(1);
+            Integer value = (Integer)visit(ctx.make().value());
+            if (table.get(name)!=null){
+                table.put(name, value);
+            }else{
+                table.put(name,value);
+            }
+            //System.out.println(table);
             
         }
         
@@ -170,6 +205,7 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
         }
         return null;
     }
+   
     public void pause(){
         try {
 			Thread.sleep(1000);
