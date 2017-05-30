@@ -139,7 +139,8 @@ public class Turtle {
                 xcola=+x+img.getWidth()/2;
                 ycola=y+img.getHeight()/2;
                 Point b = new Point(xcola,ycola);
-                App.getInstance().addLine(new RectLine(a, b));         
+                if(!up)
+                    App.getInstance().addLine(new RectLine(a, b));           
                 this.angle=0;
 		App.getInstance().mframe.canvas.paintImmediately(0,0,662,438);
 	}
@@ -152,10 +153,11 @@ public class Turtle {
             this.x = x*5;
             this.y = y*5;
             Point a = new Point(xcola,ycola);
-            xcola=+x+img.getWidth()/2;
-            ycola=y+img.getHeight()/2;
+            xcola=+this.x+img.getWidth()/2;
+            ycola=this.y+img.getHeight()/2;
             Point b = new Point(xcola,ycola);
-            App.getInstance().addLine(new RectLine(a, b));
+            if(!up)
+                App.getInstance().addLine(new RectLine(a, b));
 	    App.getInstance().mframe.canvas.paintImmediately(0,0,662,438);
             
         }

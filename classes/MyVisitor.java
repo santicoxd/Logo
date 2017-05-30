@@ -36,7 +36,14 @@ import java.util.logging.Logger;
  */
 public class MyVisitor<T> extends logoBaseVisitor<T>  {
     HashMap<String, Integer> table = new HashMap<>();
+    HashMap<String, logoParser.ProcedureDeclarationContext> function = new HashMap<>();
     
+    @Override public T visitProcedureDeclaration(logoParser.ProcedureDeclarationContext ctx) { 
+        String name=ctx.name().getText();
+        function.put(name, ctx);
+        //System.out.println(function);
+        return null;    
+    }
     @Override 
     public T visitNumber(logoParser.NumberContext ctx) {
       
@@ -143,6 +150,8 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
       
         return (T)resultado;
     }
+    
+	
 
     @Override
     public T visitCmd(logoParser.CmdContext ctx) {
@@ -226,7 +235,20 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
             App.getInstance().drawing.turtle.setxy(x, y);
             
         }
-        
+        else if (ctx.procedureInvocation()!= null){
+            String name = ctx.procedureInvocation().name().getText();
+            //System.out.println("Funcion: " + name );
+            logoParser.ProcedureDeclarationContext ctx2 = function.get(name);
+            if(ctx2==null){
+                App.getInstance().mframe.error("La funcion: "+name+" no existe");
+            }else{
+                //System.out.println("la encontre");
+                for (int i=0;i<ctx2.line().size();i++){
+                     visit(ctx2.line(i));
+                }
+               
+            }
+        }
         } catch (IOException ex) {
                 Logger.getLogger(MyVisitor.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InterruptedException ex) {
