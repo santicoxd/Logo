@@ -17,7 +17,7 @@ public class Lesson {
     private String solution;
     
     public Lesson( String name, String content, String solution) {
-        this.active = false;
+        this.active = true;
         this.name = name;
         this.content = content;
         this.solution = solution;
