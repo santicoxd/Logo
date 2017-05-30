@@ -123,6 +123,7 @@ public class Frame extends javax.swing.JFrame {
         jMenu8.setText("jMenu8");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Aprendiendo logo desde cero");
 
         answerPane.setToolTipText("Escribe el código aqui");
         answerPane.setName("Escribe tus comandos aquí"); // NOI18N
