@@ -443,6 +443,7 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_nextActionPerformed
 
     private void runButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runButtonActionPerformed
+        messageLabel.setText("");
         String answer = answerPane.getText();
         controller.runInterpreter(answer);
         message = messageLabel.getText();
