@@ -189,7 +189,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -333,7 +333,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -564,7 +564,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -629,7 +629,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -742,7 +742,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -813,7 +813,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -857,7 +857,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -908,7 +908,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -972,7 +972,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1023,7 +1023,13 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
+                        try{
+                            App.getInstance().mframe.error("Error de sintaxis\n");
+                        }catch(Exception e){
+                            
+                        }
+                        
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1077,7 +1083,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1127,7 +1133,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1176,7 +1182,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1246,7 +1252,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1330,7 +1336,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1372,7 +1378,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1440,7 +1446,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1537,7 +1543,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1614,7 +1620,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1691,7 +1697,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1737,7 +1743,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1792,7 +1798,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1847,7 +1853,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1902,7 +1908,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -1957,7 +1963,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -2007,7 +2013,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -2057,7 +2063,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -2107,7 +2113,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -2157,7 +2163,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -2207,7 +2213,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -2248,7 +2254,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -2289,7 +2295,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -2330,7 +2336,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -2381,7 +2387,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -2427,7 +2433,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -2494,7 +2500,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -2536,7 +2542,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
@@ -2578,7 +2584,7 @@ public class logoParser extends Parser {
 		}
 		catch (RecognitionException re) {
 			_localctx.exception = re;
-			_errHandler.reportError(this, re);
+			_errHandler.reportError(this, re);                        try{                            App.getInstance().mframe.error("Error de sintaxis\n");                        }catch(Exception e){                                                    }
 			_errHandler.recover(this, re);
 		}
 		finally {
