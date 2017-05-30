@@ -44,6 +44,26 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
         
         return (T)a;
     }
+    public T visitComparison(logoParser.ComparisonContext ctx) { 
+         
+        Integer a = (Integer)visit(ctx.expression(0));
+        Integer b = (Integer)visit(ctx.expression(1));
+        String op = ctx.comparisonOperator().getText();
+        Boolean cal = null;
+        switch (op){
+            case ">":
+                cal = a>b;
+                break;
+            case "<":
+                cal = a<b;
+                break;
+            case "=":
+                cal = (a==b);
+                break;
+        }
+        return (T)cal;
+        
+    }
     @Override public T visitDeref(logoParser.DerefContext ctx) {
         //System.out.println("var O.o");
         String name=ctx.name().getText();
@@ -196,6 +216,15 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
             }
             //System.out.println(table);
             
+        }else if (ctx.ife()!= null){
+            visit(ctx.ife());
+            
+        }
+        else if (ctx.setxy()!= null){
+            Integer x = (Integer) visit(ctx.setxy().expression(0));
+            Integer y = (Integer) visit(ctx.setxy().expression(1));
+            App.getInstance().drawing.turtle.setxy(x, y);
+            
         }
         
         } catch (IOException ex) {
@@ -205,7 +234,20 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
         }
         return null;
     }
-   
+    @Override 
+    
+    
+   public T visitIfe(logoParser.IfeContext ctx) {
+       
+       Boolean a  = (Boolean) visit (ctx.comparison());
+       // System.out.println(a);
+       if(a==true){
+           //System.out.println("verdadero");
+           visit(ctx.block());
+       }
+       
+       return null;
+   }
     public void pause(){
         try {
 			Thread.sleep(1000);
