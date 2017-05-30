@@ -36,7 +36,7 @@ import java.util.logging.Logger;
 public class MyVisitor<T> extends logoBaseVisitor<T>  {
     @Override 
     public T visitNumber(logoParser.NumberContext ctx) {
-        //System.out.println("Encontre un numero");
+      
         Integer a = Integer.valueOf(ctx.NUMBER().getText());
         
         return (T)a;
@@ -93,7 +93,7 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
                 resultado= left+rigth;
            }else{
                resultado=rigth-left;
-               
+              
            }
             
         }
@@ -154,6 +154,13 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
         if (ctx.home()!= null){
  
             App.getInstance().drawing.turtle.home();
+        }else if (ctx.repeat()!= null){
+            Integer number = (Integer) visit(ctx.repeat().number());
+            for (int i = 0 ; i<number;i++){
+                visit(ctx.repeat().block());
+            }
+            //System.out.println("Veces: "+number);
+            
         }
         
         } catch (IOException ex) {
