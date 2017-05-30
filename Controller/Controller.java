@@ -7,6 +7,7 @@ package Controller;
 
 import Model.*;
 import View.Frame;
+import classes.App;
 import classes.MyVisitor;
 import classes.logoLexer;
 import classes.logoParser;
@@ -42,6 +43,7 @@ public class Controller {
         String message = "";
         
         return new InfoObject(cIndex, lIndex, clName, solution, content, message);
+        
     }
     
     //Modificar dependiendo los contenidos

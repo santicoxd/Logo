@@ -53,6 +53,8 @@ public class Frame extends javax.swing.JFrame {
         messageLabel.setText(message);
         controller.updateButtons(cIndex,lIndex);
         answerPane.setText("");
+        
+        
     }
 
     /**
@@ -105,8 +107,6 @@ public class Frame extends javax.swing.JFrame {
         l31 = new javax.swing.JMenuItem();
         l32 = new javax.swing.JMenuItem();
         l33 = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu9 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -365,12 +365,6 @@ public class Frame extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu6);
 
-        jMenu7.setText("   Capítulo 4   ");
-        jMenuBar2.add(jMenu7);
-
-        jMenu9.setText("Práctica Libre");
-        jMenuBar2.add(jMenu9);
-
         setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -416,11 +410,13 @@ public class Frame extends javax.swing.JFrame {
     private void l11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l11ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(0,0);
+        cs();
     }//GEN-LAST:event_l11ActionPerformed
 
     private void l31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l31ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(2,0);
+        cs();
     }//GEN-LAST:event_l31ActionPerformed
 
     private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
@@ -431,6 +427,7 @@ public class Frame extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         changeLessonInformation(0,1);
+        cs();
 
     }//GEN-LAST:event_l12ActionPerformed
 
@@ -440,8 +437,17 @@ public class Frame extends javax.swing.JFrame {
         cIndex = nextLesson[0];
         lIndex = nextLesson[1];
         changeLessonInformation(cIndex, lIndex);
+        cs();
     }//GEN-LAST:event_nextActionPerformed
 
+    
+    public void cs(){
+        try {
+            App.getInstance().drawing.turtle.home();
+            App.getInstance().drawing.clearscreen();
+        } catch (Exception e) {
+        }
+    }
     private void runButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runButtonActionPerformed
         messageLabel.setText("");
         String answer = answerPane.getText();
@@ -455,16 +461,19 @@ public class Frame extends javax.swing.JFrame {
     private void l21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l21ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(1,0);
+        cs();
     }//GEN-LAST:event_l21ActionPerformed
 
     private void l32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l32ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(2,1);
+        cs();
     }//GEN-LAST:event_l32ActionPerformed
 
     private void l33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l33ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(2,2);
+        cs();
     }//GEN-LAST:event_l33ActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -479,56 +488,67 @@ public class Frame extends javax.swing.JFrame {
     private void l15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l15ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(0,4);
+        cs();
     }//GEN-LAST:event_l15ActionPerformed
 
     private void l13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l13ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(0,2);
+        cs();
     }//GEN-LAST:event_l13ActionPerformed
 
     private void l14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l14ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(0,3);
+        cs();
     }//GEN-LAST:event_l14ActionPerformed
 
     private void l16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l16ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(0,5);
+        cs();
     }//GEN-LAST:event_l16ActionPerformed
 
     private void l17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l17ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(0, 6);
+        cs();
     }//GEN-LAST:event_l17ActionPerformed
 
     private void l22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l22ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(1,1);
+        cs();
     }//GEN-LAST:event_l22ActionPerformed
 
     private void l26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l26ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(1,5);
+        cs();
     }//GEN-LAST:event_l26ActionPerformed
 
     private void l23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l23ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(1,2);
+        cs();
     }//GEN-LAST:event_l23ActionPerformed
 
     private void l24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l24ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(1,3);
+        cs();
     }//GEN-LAST:event_l24ActionPerformed
 
     private void l25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l25ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(1,4);
+        cs();
     }//GEN-LAST:event_l25ActionPerformed
 
     private void l27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l27ActionPerformed
         // TODO add your handling code here:
         changeLessonInformation(1,6);
+        cs();
     }//GEN-LAST:event_l27ActionPerformed
     public void error(String s){
         this.messageLabel.setText(s);
@@ -584,9 +604,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;

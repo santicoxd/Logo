@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 public class Canvas extends JPanel {
 		public Canvas() {
 			
-			this.setBackground(Color.blue);
+			this.setBackground(new Color(0x9CE9F9));
 			
 		}
 		/*public void paintComponent (Graphics g){
