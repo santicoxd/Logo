@@ -445,7 +445,8 @@ public class Frame extends javax.swing.JFrame {
     private void runButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runButtonActionPerformed
         String answer = answerPane.getText();
         controller.runInterpreter(answer);
-        message = controller.checkSolution(cIndex, lIndex, answer);
+        message = messageLabel.getText();
+        message = message + controller.checkSolution(cIndex, lIndex, answer);
         messageLabel.setText(message);
         
     }//GEN-LAST:event_runButtonActionPerformed
@@ -528,7 +529,9 @@ public class Frame extends javax.swing.JFrame {
         // TODO add your handling code here:
         changeLessonInformation(1,6);
     }//GEN-LAST:event_l27ActionPerformed
-
+    public void error(String s){
+        this.messageLabel.setText(s);
+    }
     /**
      * @param args the command line arguments
      */
