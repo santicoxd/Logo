@@ -240,7 +240,7 @@ public class MyVisitor<T> extends logoBaseVisitor<T>  {
             //System.out.println("Funcion: " + name );
             logoParser.ProcedureDeclarationContext ctx2 = function.get(name);
             if(ctx2==null){
-                App.getInstance().mframe.error("La funcion: "+name+" no existe");
+                App.getInstance().mframe.error("La funcion: "+name+" no existe\n");
             }else{
                 //System.out.println("la encontre");
                 for (int i=0;i<ctx2.line().size();i++){
