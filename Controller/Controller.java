@@ -53,6 +53,12 @@ public class Controller {
         Frame.l16.setEnabled(getLesson(0, 5).isActive());
         Frame.l17.setEnabled(getLesson(0, 6).isActive());
         Frame.l21.setEnabled(getLesson(1, 0).isActive());
+        Frame.l22.setEnabled(getLesson(1, 1).isActive());
+        Frame.l23.setEnabled(getLesson(1, 2).isActive());
+        Frame.l24.setEnabled(getLesson(1, 3).isActive());
+        Frame.l25.setEnabled(getLesson(1, 4).isActive());
+        Frame.l26.setEnabled(getLesson(1, 5).isActive());
+        Frame.l27.setEnabled(getLesson(1, 6).isActive());
         Frame.l31.setEnabled(getLesson(2, 0).isActive());
         Frame.l32.setEnabled(getLesson(2, 1).isActive());
         Frame.l33.setEnabled(getLesson(2, 2).isActive());

@@ -95,6 +95,12 @@ public class Frame extends javax.swing.JFrame {
         l17 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         l21 = new javax.swing.JMenuItem();
+        l22 = new javax.swing.JMenuItem();
+        l23 = new javax.swing.JMenuItem();
+        l24 = new javax.swing.JMenuItem();
+        l25 = new javax.swing.JMenuItem();
+        l26 = new javax.swing.JMenuItem();
+        l27 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         l31 = new javax.swing.JMenuItem();
         l32 = new javax.swing.JMenuItem();
@@ -262,6 +268,11 @@ public class Frame extends javax.swing.JFrame {
         jMenu4.add(l16);
 
         l17.setText("Lección 1.7");
+        l17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l17ActionPerformed(evt);
+            }
+        });
         jMenu4.add(l17);
 
         jMenuBar2.add(jMenu4);
@@ -275,6 +286,54 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         jMenu5.add(l21);
+
+        l22.setText("Lección 2.2");
+        l22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l22ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(l22);
+
+        l23.setText("Lección 2.3");
+        l23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l23ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(l23);
+
+        l24.setText("Lección 2.4");
+        l24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l24ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(l24);
+
+        l25.setText("Lección 2.5");
+        l25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l25ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(l25);
+
+        l26.setText("Lección 2.6");
+        l26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l26ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(l26);
+
+        l27.setText("Lección 2.7");
+        l27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l27ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(l27);
 
         jMenuBar2.add(jMenu5);
 
@@ -435,6 +494,41 @@ public class Frame extends javax.swing.JFrame {
         changeLessonInformation(0,5);
     }//GEN-LAST:event_l16ActionPerformed
 
+    private void l17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l17ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(0, 6);
+    }//GEN-LAST:event_l17ActionPerformed
+
+    private void l22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l22ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(1,1);
+    }//GEN-LAST:event_l22ActionPerformed
+
+    private void l26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l26ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(1,5);
+    }//GEN-LAST:event_l26ActionPerformed
+
+    private void l23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l23ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(1,2);
+    }//GEN-LAST:event_l23ActionPerformed
+
+    private void l24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l24ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(1,3);
+    }//GEN-LAST:event_l24ActionPerformed
+
+    private void l25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l25ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(1,4);
+    }//GEN-LAST:event_l25ActionPerformed
+
+    private void l27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l27ActionPerformed
+        // TODO add your handling code here:
+        changeLessonInformation(1,6);
+    }//GEN-LAST:event_l27ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -506,6 +600,12 @@ public class Frame extends javax.swing.JFrame {
     public static javax.swing.JMenuItem l16;
     public static javax.swing.JMenuItem l17;
     public static javax.swing.JMenuItem l21;
+    public static javax.swing.JMenuItem l22;
+    public static javax.swing.JMenuItem l23;
+    public static javax.swing.JMenuItem l24;
+    public static javax.swing.JMenuItem l25;
+    public static javax.swing.JMenuItem l26;
+    public static javax.swing.JMenuItem l27;
     public static javax.swing.JMenuItem l31;
     public static javax.swing.JMenuItem l32;
     public static javax.swing.JMenuItem l33;
